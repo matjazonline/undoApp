@@ -4,17 +4,25 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import {NglModule, provideNglConfig} from "ng-lightning/ng-lightning";
+import { EllipsisPipe } from './ellipsis.pipe';
+import {SimpleRxStoreModule} from "./simple-rx-store/simple-rx-store.module";
+import {AppState} from "./AppState";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    NglModule,
+
+    SimpleRxStoreModule
   ],
-  providers: [],
+  declarations: [
+    AppComponent,
+    EllipsisPipe
+  ],
+  providers: [provideNglConfig(), AppState],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
