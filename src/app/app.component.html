@@ -48,7 +48,7 @@
               </ul>
             </div>
 
-            <p class="description-text slds-text-heading--medium" *ngIf="selectedUndo!=null" #description contenteditable="true" (blur)="update({title:selectedUndo.title, desc:description.innerText})" [innerText]="selectedUndo?.desc"></p>
+            <p class="description-text slds-text-heading--medium" *ngIf="selectedUndo" #description contenteditable="true" (blur)="update({title:selectedUndo.title, desc:description.innerText})" [innerText]="selectedUndo?.desc"></p>
 
           </div>
           <hr>

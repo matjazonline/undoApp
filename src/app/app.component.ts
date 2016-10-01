@@ -14,10 +14,10 @@ export class AppComponent {
   addNewInput: ElementRef;
   @ViewChild("description")
   descriptionInput: ElementRef;
-  selectedUndo:any;
+  selectedUndo: any;
   //undos: any[] = [{title: "app state", desc: "based on react \n faster when immutable values and OnPush"},{title: "undo1", desc: "description"},{title: "undo1", desc: "description"},{title: "undo1", desc: "description"},{title: "undo1", desc: "description"},{title: "undo1", desc: "description"}];
 
-  constructor(private renderer:Renderer, private appStateService:AppState){
+  constructor(private renderer: Renderer, private appStateService: AppState) {
     appStateService.appStateVO.subscribe((stateVO)=> {
       console.log("updated state VO", stateVO);
       this.selectedUndo = stateVO.selectedUndo;
@@ -25,8 +25,8 @@ export class AppComponent {
     this.appStateService.newAction(AppState.UNDO_GET_LIST, null, null);
   }
 
-  onAddKey(ev:any){
-    if(ev.keyCode==13) {
+  onAddKey(ev: any) {
+    if (ev.keyCode == 13 && ev.srcElement.value) {
       this.appStateService.newAction(AppState.UNDO_CREATE, {title: ev.srcElement.value, desc: ""}, null);
       this.renderer.setElementProperty(this.addNewInput.nativeElement, "value", "");
       setTimeout(()=> {
@@ -37,13 +37,15 @@ export class AppComponent {
     }
   }
 
-  selectUndo(undo:any){
-    this.appStateService.newAction(AppState.UNDO_SELECT,undo);
+  selectUndo(undo: any) {
+    this.appStateService.newAction(AppState.UNDO_SELECT, undo);
   }
-  undone(undo:any){
+
+  undone(undo: any) {
     this.appStateService.newAction(AppState.UNDO_REMOVE, undo);
   }
-  update(undo:any){
+
+  update(undo: any) {
     this.appStateService.newAction(AppState.UNDO_UPDATE, undo);
   }
 }
