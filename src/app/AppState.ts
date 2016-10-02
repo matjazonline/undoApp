@@ -45,23 +45,49 @@ export class AppState {
             {title:'app state / video', author:'by Pavithra Kodmad', href:'https://www.youtube.com/watch?v=_G-e59CZRqw'},
             {title:'change detection', href:'http://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html'}
           ]
-        }, {
-          title: "testing",
-          desc: ``,
+        },
+          {
+          title: "forms",
+          desc: `\n
+                  \n
+                  `,
           resources:[
-            {title:'app state / blog', author:'by Viktor Savkin', href:'https://vsavkin.com/managing-state-in-angular-2-applications-caf78d123d02#.hnelotviq'},
-            {title:'app state / video', author:'by Pavithra Kodmad', href:'https://www.youtube.com/watch?v=_G-e59CZRqw'},
-            {title:'change detection', href:'http://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html'}
-          ]},
-          {title: "security", desc: "description"}, {
-          title: "RxJS",
-          desc: "description"
-        }, {title: "modules", desc: "description"}, {title: "forms", desc: "description"},
+            {title:'Angular 2 forms / video', author:'by Kara Erickson', href:'https://www.youtube.com/watch?v=xYv9lsrV0s4'},
+            {title:'Reactive forms / blog', author:'by Pascal Precht', href:'http://blog.thoughtram.io/angular/2016/06/22/model-driven-forms-in-angular-2.html'}
+          ]
+        },
+          {
+          title: "testing",
+          desc: `\n
+                  \n
+                  `,
+          resources:[
+            {title:'Angular 2 forms / video', author:'by Kara Erickson', href:'https://www.youtube.com/watch?v=xYv9lsrV0s4'},
+            {title:'Reactive forms / blog', author:'by Pascal Precht', href:'http://blog.thoughtram.io/angular/2016/06/22/model-driven-forms-in-angular-2.html'}
+          ]
+        },
+          {
+          title: "RxJs",
+          desc: `\n
+                  \n
+                  `,
+          resources:[
+            {title:'Angular 2 forms / video', author:'by Kara Erickson', href:'https://www.youtube.com/watch?v=xYv9lsrV0s4'},
+            {title:'Reactive forms / blog', author:'by Pascal Precht', href:'http://blog.thoughtram.io/angular/2016/06/22/model-driven-forms-in-angular-2.html'}
+          ]
+        },
+          {
+            title: "modules",
+            desc: `great for utility libraries\n
+                    child routes \n
+                    lazy loading\n
+                    \n`,
+            resources:[]},
           {
             title: "security",
             desc: `limited JS expressions inside templates\n
                   white list policy compared to vulnerable black list policy in NG1\n
-                  
+                  auto updating npm libraries not secure
                     \n`,
             resources:[
               {title:'cross site requests / video', author:'by Dave Smith', href:'https://www.youtube.com/watch?v=9inczw6qtpY'},
@@ -72,9 +98,11 @@ export class AppState {
             desc: `generates app boilerplate\n
                     generates module, component, directive, service, ...\n
                     new features already setup - AOT compiler, treeshake with included webpack, NGUniversal\n
+                    reloading routes on file change\n
                     \n`,
             resources:[
-              {title:'compiler / video', author:'by Tobias Bosch', href:'https://www.youtube.com/watch?v=kW9cJsvcsGo'},
+              {title:'ng-cli / video', author:'by Stephen Fluin', href:'https://www.youtube.com/watch?v=uBRK6cTr4Vk'},
+              {title:'compiler / video', author:'by Tobias Bosch', href:'https://www.youtube.com/watch?v=kW9cJsvcsGo'}
             ]},
           {
             title: "Augury tool",
