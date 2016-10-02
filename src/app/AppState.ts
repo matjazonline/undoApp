@@ -34,14 +34,58 @@ export class AppState {
       if (!undosListState || undosListState.length < 1) {
         return [{
           title: "app state",
-          desc: "based on react \n faster when immutable values and OnPush"
-        }, {title: "testing", desc: "description"}, {title: "security", desc: "description"}, {
+          desc: `based on Redux - events and global app state\n 
+                  local value updates inside components\n
+                  optimal performance with immutable values and ChangeDetectionStrategy.OnPush\n
+                  ChangeDetectionStrategy.OnPush updates only on @Input immutable value change or Observable change\n
+                  \n
+                  `,
+          resources:[
+            {title:'app state / blog', author:'by Viktor Savkin', href:'https://vsavkin.com/managing-state-in-angular-2-applications-caf78d123d02#.hnelotviq'},
+            {title:'app state / video', author:'by Pavithra Kodmad', href:'https://www.youtube.com/watch?v=_G-e59CZRqw'},
+            {title:'change detection', href:'http://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html'}
+          ]
+        }, {
+          title: "testing",
+          desc: ``,
+          resources:[
+            {title:'app state / blog', author:'by Viktor Savkin', href:'https://vsavkin.com/managing-state-in-angular-2-applications-caf78d123d02#.hnelotviq'},
+            {title:'app state / video', author:'by Pavithra Kodmad', href:'https://www.youtube.com/watch?v=_G-e59CZRqw'},
+            {title:'change detection', href:'http://blog.thoughtram.io/angular/2016/02/22/angular-2-change-detection-explained.html'}
+          ]},
+          {title: "security", desc: "description"}, {
           title: "RxJS",
           desc: "description"
-        }, {title: "modules", desc: "description"}, {title: "forms", desc: "description"}, {
-          title: "ng-cli",
-          desc: "description"
-        }];
+        }, {title: "modules", desc: "description"}, {title: "forms", desc: "description"},
+          {
+            title: "security",
+            desc: `limited JS expressions inside templates\n
+                  white list policy compared to vulnerable black list policy in NG1\n
+                  
+                    \n`,
+            resources:[
+              {title:'cross site requests / video', author:'by Dave Smith', href:'https://www.youtube.com/watch?v=9inczw6qtpY'},
+              {title:'secure NG apps / video', author:'by Gleb Bahmutov', href:'https://www.youtube.com/watch?v=8M5JQwVtdxo'},
+            ]},
+          {
+            title: "ng-cli tool",
+            desc: `generates app boilerplate\n
+                    generates module, component, directive, service, ...\n
+                    new features already setup - AOT compiler, treeshake with included webpack, NGUniversal\n
+                    \n`,
+            resources:[
+              {title:'compiler / video', author:'by Tobias Bosch', href:'https://www.youtube.com/watch?v=kW9cJsvcsGo'},
+            ]},
+          {
+            title: "Augury tool",
+            desc: `view and change component properties runtime\n
+                  visualize component tree\n
+                  performance characteristics\n
+                    \n`,
+            resources:[
+              {title:'Augury tool / video', author:'by Igor Kamenetsky', href:'https://www.youtube.com/watch?v=55vvJbrDgqw'},
+            ]}
+        ];
       }
     }, AppState.STATE_NAME_UNDO_LIST, null);
 
