@@ -48,7 +48,10 @@ export class AppState {
         },
           {
           title: "forms",
-          desc: `\n
+          desc: `formGroup-> formControl (has value, validation, events) // formArray -> array of formControl-s for dynamic form lengths\n
+                  \n
+                  FormsModule - everything is done in templates by directives - template driven - async\n
+                  ReactiveFormsModule - instantiated in Component - component driven - sync\n
                   \n
                   `,
           resources:[
@@ -58,12 +61,25 @@ export class AppState {
         },
           {
           title: "testing",
-          desc: `\n
+          desc: `each test gets its own test module\n
+                  TestBed - static methods to configure testing module\n
+                  TestBed.configureTestingModule( { providers:[Car, Engine,... provide:Battery, use:MockBattery}, importModules:[...] ]})\n
+                  TestBed.compileComponents(), .createComponent(), debugElement (cross platform similar to ElementRef), componentInstance\n
                   \n
+                  ...\n
+                  let fixture=TestBed.createComponent(CompType)\n
+                  fixture.detectChanges() //updates the view as well\n
+                  fixture.componentInstance.method() //invoke component method\n
+                  fixture.detectChanges()\n
+                  fixture.nativeElement.querySelectorAll(".element-class") // check the view\n
+                  ...\n
+                  \n
+                  can test for key events as well and triggering event handlers of output events in child components\n
+                  done() replaced by async()\n
+                  fakeAsync( ()=> ... tick(1000) ; ... ) // for time delay \n
                   `,
           resources:[
-            {title:'Angular 2 forms / video', author:'by Kara Erickson', href:'https://www.youtube.com/watch?v=xYv9lsrV0s4'},
-            {title:'Reactive forms / blog', author:'by Pascal Precht', href:'http://blog.thoughtram.io/angular/2016/06/22/model-driven-forms-in-angular-2.html'}
+            {title:'Angular 2 forms / video', author:'by Julie Ralph', href:'https://www.youtube.com/watch?v=f493Xf0F2yU'}
           ]
         },
           {
@@ -72,11 +88,22 @@ export class AppState {
                   don't Rx everything - great for chaining multiple events, adding delay, clientside rate limit, coordinating async tasks, when cancelation is required\n
                   live apps\n
                   app state\n
+                  ...\n
+                  const move$=Observable.fromEvent(document,'mousemove')\n
+                  .map(event=>{return {x: event.pageX, y: event.pageY}});\n
+                  \n
+                  const down$ = Observable.fromEvent(this.ball.nativeElement, 'mousedown');\n
+                  const up$ = Observable.fromEvent(document, 'mouseup');\n
+                  \n
+                  down$.switchMap(event=>{move$.takeUntil($up)})\n
+                    .startWith({x:100, y:100})\n
+                    .subscribe(result=>{this.position=result})\n
                   \n
                   `,
           resources:[
             {title:'Reactive UI/ video', author:'by Lukas Ruebbelke', href:'https://www.youtube.com/watch?v=5CTL7aqSvJU'},
             {title:'RxJS / video', author:'by Ben Lesh', href:'https://www.youtube.com/watch?v=3LKMwkuK0ZE'},
+            {title:'RxJS in forms / blog', author:'by Pascal Precht', href:'http://blog.thoughtram.io/angular/2016/01/06/taking-advantage-of-observables-in-angular2.html'},
             {title:'RxJS marbles / visual tool', author:'by André Staltz', href:'http://rxmarbles.com'}
           ]
         },

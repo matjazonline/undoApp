@@ -49,10 +49,16 @@
             </div>
 
             <p class="description-text slds-text-heading--medium" *ngIf="selectedUndo" #description contenteditable="true" (blur)="update({title:selectedUndo.title, desc:description.innerText})" [innerText]="selectedUndo?.desc"></p>
+            <div *ngIf="selectedUndo">
+              <p>resources:</p>
+              <ul>
+                <li *ngFor="let resource of selectedUndo?.resources"><a href="{{resource.href}}" target="_blank ">{{resource.title}}</a></li>
+              </ul>
+            </div>
 
           </div>
-          <hr>
-          {{selectedUndo|json}}
+          <!--<hr>
+          {{selectedUndo|json}}-->
           <!--<div class="slds-section slds-is-open">
             <div class="slds-section__title">
               <button class="slds-button slds-button&#45;&#45;icon slds-m-right&#45;&#45;small">
