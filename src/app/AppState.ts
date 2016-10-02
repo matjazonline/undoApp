@@ -68,12 +68,16 @@ export class AppState {
         },
           {
           title: "RxJs",
-          desc: `\n
+          desc: `don't get overwhelmed start with Rx operators: map, filter, scan, mergeMap, switchMap, combineLatest, concat, do\n
+                  don't Rx everything - great for chaining multiple events, adding delay, clientside rate limit, coordinating async tasks, when cancelation is required\n
+                  live apps\n
+                  app state\n
                   \n
                   `,
           resources:[
-            {title:'Angular 2 forms / video', author:'by Kara Erickson', href:'https://www.youtube.com/watch?v=xYv9lsrV0s4'},
-            {title:'Reactive forms / blog', author:'by Pascal Precht', href:'http://blog.thoughtram.io/angular/2016/06/22/model-driven-forms-in-angular-2.html'}
+            {title:'Reactive UI/ video', author:'by Lukas Ruebbelke', href:'https://www.youtube.com/watch?v=5CTL7aqSvJU'},
+            {title:'RxJS / video', author:'by Ben Lesh', href:'https://www.youtube.com/watch?v=3LKMwkuK0ZE'},
+            {title:'RxJS marbles / visual tool', author:'by André Staltz', href:'http://rxmarbles.com'}
           ]
         },
           {
@@ -81,7 +85,7 @@ export class AppState {
             desc: `great for utility libraries\n
                     child routes \n
                     lazy loading\n
-                    \n`,
+                    to dynamically compile HTML string module is needed with component that sets template from variable\n`,
             resources:[]},
           {
             title: "security",
